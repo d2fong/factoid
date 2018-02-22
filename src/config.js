@@ -21,6 +21,7 @@ let defaults = {
   DB_CERT: undefined,  // path to a certificate (cert) file if db uses ssl
 
   // Services
+  INDRA_URL: 'http://ec2-54-88-146-250.compute-1.amazonaws.com:8080/reach/process_text',
   REACH_URL: 'http://agathon.sista.arizona.edu:8080/odinweb/api/text',
   UNIPROT_URL: 'http://www.uniprot.org/uniprot',
   UNIPROT_LINK_BASE_URL: 'http://www.uniprot.org/uniprot/',
