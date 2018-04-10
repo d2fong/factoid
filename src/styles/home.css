@@ -115,7 +115,7 @@ header.nav-bar {
   width: 100%;
   height: 60em;
   margin-top: 2em;
-  background-image: url('./image/how-it-works.png');
+  background-image: url('./image/author-workflow.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -125,7 +125,7 @@ header.nav-bar {
   width: 100%;
   height: 35em;
   margin-top: 2em;
-  background-image: url('./image/how-it-works-detailed.png');
+  background-image: url('./image/factoid-workflow-detailed.svg');
   background-size: contain;
   background-repeat: no-repeat;
 }
