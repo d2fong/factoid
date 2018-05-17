@@ -1,10 +1,17 @@
 const React = require('react');
+const ReactDom = require('react-dom');
+const Cytoscape = require('cytoscape');
 const h = require('react-hyperscript');
 const hh = require('hyperscript');
 const tippyjs = require('tippy.js');
 const _ = require('lodash');
+const Promise = require('bluebird');
 
-const { makeClassList, isInteractionNode } = require('../../../util');
+
+const makeStylesheet = require('./cy/stylesheet');
+const sampleNetwork = require('./sample-network');
+
+const { makeClassList, isInteractionNode, defer } = require('../../../util');
 const defs = require('../../defs');
 
 
@@ -13,14 +20,30 @@ class Help extends React.Component {
     super(props);
 
     this.data = ({
-      showHelp: false
+      showHelp: false,
+      mountDeferred: defer()
     });
 
     this.state = _.assign({}, this.data);
+    props.bus.on('togglehelp', () => this.toggleHelp());
 
-    let toggleHelpHandler = () => this.toggleHelp();
-    this.toggleHelpHandler = toggleHelpHandler;
-    props.bus.on('togglehelp', toggleHelpHandler);
+    Promise.try( () => {} )
+      .then( () => this.data.mountDeferred.promise )
+      .then( () => {
+        let helpGraphCtr = ReactDom.findDOMNode(this).querySelector('#help-editor');
+        this.data.cy = Cytoscape({
+          container: helpGraphCtr,
+          stylesheet: makeStylesheet(),
+          minZoom: defs.minZoom,
+          maxZoom: defs.maxZoom,
+          zoom: ( defs.minZoom + defs.maxZoom ) / 2,
+          elements: sampleNetwork,
+          layout: {
+            name: 'preset',
+            fit: false
+          }
+        });
+      });
   }
 
   setData( obj, callback ){
@@ -29,8 +52,12 @@ class Help extends React.Component {
     this.setState( obj, callback );
   }
 
+  componentDidMount(){
+    this.data.mountDeferred.resolve();
+  }
+
   componentWillUnmount(){
-    this.props.bus.removeListener(this.toggleHelpHandler);
+    this.props.bus.removeListener(this.toggle);
     if( this.data.entTip ){
       this.data.entTip.destroy();
     }
@@ -107,6 +134,7 @@ class Help extends React.Component {
 
   render(){
     let helpContent = [
+      h('div#help-editor', { className: makeClassList({'help-editor-active': this.state.showHelp})}),
       h('div.editor-help-overlay', {
         onClick: () => this.toggleHelp(),
          className: makeClassList({'editor-help-overlay-active': this.state.showHelp})

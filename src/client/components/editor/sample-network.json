@@ -1,0 +1,192 @@
+[
+  {
+    "data": {
+      "id": "5f01e037-ffb0-4e7f-bd65-fce1c02965a7",
+      "name": "RAS",
+      "type": "chemical",
+      "isEntity": true,
+      "isInteraction": false,
+      "associated": true,
+      "completed": true
+    },
+    "position": {
+      "x": -9.571428571428603,
+      "y": 33.61904761904761
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "id": "5fa19c84-aa3d-4ab5-b8a2-b128402cd43d",
+      "name": "RAF",
+      "type": "protein",
+      "isEntity": true,
+      "isInteraction": false,
+      "associated": true,
+      "completed": true
+    },
+    "position": {
+      "x": -0.4761904761904949,
+      "y": 93.66666666666667
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "id": "8a7d270f-ddc6-425f-9af6-8778116099c6",
+      "name": "",
+      "type": "interaction",
+      "isEntity": false,
+      "isInteraction": true,
+      "completed": true,
+      "arity": 2
+    },
+    "position": {
+      "x": -5.023809523809549,
+      "y": 63.64285714285714
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "id": "5ffb2c63-d201-496a-a7d8-911c819ca7c3",
+      "name": "MEK",
+      "type": "chemical",
+      "isEntity": true,
+      "isInteraction": false,
+      "associated": true,
+      "completed": true
+    },
+    "position": {
+      "x": -54.18279079430305,
+      "y": 148.4941455500416
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "id": "ed307b80-0710-4806-a094-fbe34d1c52c6",
+      "name": "",
+      "type": "interaction",
+      "isEntity": false,
+      "isInteraction": true,
+      "completed": true,
+      "arity": 2
+    },
+    "position": {
+      "x": -27.329490635246774,
+      "y": 121.08040610835414
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "8a7d270f-ddc6-425f-9af6-8778116099c6",
+      "target": "5f01e037-ffb0-4e7f-bd65-fce1c02965a7",
+      "type": "unsigned",
+      "id": "3c071270-4d17-4557-a6dc-af23c331b439"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "8a7d270f-ddc6-425f-9af6-8778116099c6",
+      "target": "5fa19c84-aa3d-4ab5-b8a2-b128402cd43d",
+      "type": "positive",
+      "id": "fef27f39-3bd7-4b79-82d3-bacba5a96233"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "ed307b80-0710-4806-a094-fbe34d1c52c6",
+      "target": "5ffb2c63-d201-496a-a7d8-911c819ca7c3",
+      "type": "positive",
+      "id": "bfc29ba5-9de1-4efc-bcb9-87d882d7648b"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "source": "ed307b80-0710-4806-a094-fbe34d1c52c6",
+      "target": "5fa19c84-aa3d-4ab5-b8a2-b128402cd43d",
+      "type": "unsigned",
+      "id": "ac6339e8-a8ef-4b4b-9daf-8a7e5b25e11f"
+    },
+    "position": {},
+    "group": "edges",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": true,
+    "classes": ""
+  },
+  {
+    "data": {
+      "id": "b045fe99-f67f-4b6e-9f86-aa9417ecf315"
+    },
+    "position": {
+      "x": -0.4761904761904949,
+      "y": 78.66666666666667
+    },
+    "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbable": false,
+    "classes": "eh-handle"
+  }
+]

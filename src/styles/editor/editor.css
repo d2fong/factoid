@@ -130,3 +130,18 @@
   z-index: 10001;
   cursor: pointer;
 }
+
+#help-editor {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+}
+
+.help-editor-active {
+  opacity: 1 !important;
+  z-index: 3 !important;
+}
